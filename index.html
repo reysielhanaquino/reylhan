@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RNHS-SHS Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --maroon-dark: #5a0000;
+            --maroon-primary: #800000;
+            --maroon-light: #a52a2a;
+            --accent-gold: #d4af37;
+            --bg-gradient: linear-gradient(135deg, #fdfaf7 0%, #e2d1d1 100%);
+        }
+
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background: var(--bg-gradient);
+            margin: 0; 
+            padding: 0; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            transition: opacity 0.8s ease; 
+        }
+
+        body.fade-in { opacity: 1; }
+        body.fade-out { opacity: 0; }
+
+        .container { 
+            width: 100%;
+            max-width: 400px; 
+            background: white; 
+            padding: 40px; 
+            border-radius: 20px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15); 
+            text-align: center; 
+            border-top: 8px solid var(--maroon-primary);
+            margin: 20px;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .school-header img {
+            width: 95px;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+        }
+
+        .school-header img:hover {
+            transform: scale(1.1) rotate(3deg);
+        }
+
+        .school-name { 
+            font-size: 18px; 
+            font-weight: 600; 
+            color: var(--maroon-primary); 
+            margin: 15px 0 0 0; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+        }
+
+        .web-text { 
+            font-size: 13px; 
+            color: #888; 
+            display: block; 
+            margin-bottom: 5px;
+        }
+        
+        h2 { 
+            color: var(--maroon-dark); 
+            margin: 20px 0; 
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+            transition: 0.3s;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] { 
+            width: 100%; 
+            padding: 12px 12px 12px 45px; 
+            border-radius: 8px; 
+            border: 2px solid #eee; 
+            box-sizing: border-box; 
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            background: #fdfdfd;
+        }
+
+        input:focus { 
+            border-color: var(--maroon-primary); 
+            background: #fff;
+            box-shadow: 0 0 8px rgba(128,0,0,0.1); 
+        }
+
+        input:focus + i {
+            color: var(--maroon-primary);
+        }
+
+        .show-password-container { 
+            text-align: left; 
+            margin: -5px 0 15px 5px; 
+            font-size: 13px; 
+            color: #666; 
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            width: fit-content;
+        }
+        
+        .show-password-container input { margin-right: 8px; cursor: pointer; }
+
+        .terms-box { 
+            font-size: 12px; 
+            color: #555; 
+            text-align: left; 
+            margin: 15px 0; 
+            display: flex; 
+            align-items: flex-start; 
+            line-height: 1.4;
+        }
+        
+        .terms-box input { margin-right: 10px; margin-top: 2px; cursor: pointer; }
+
+        button { 
+            width: 100%; 
+            padding: 14px; 
+            background: linear-gradient(to right, var(--maroon-primary), var(--maroon-light));
+            color: white; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-weight: 600; 
+            font-size: 16px; 
+            transition: 0.4s; 
+            box-shadow: 0 4px 15px rgba(128,0,0,0.2);
+        }
+
+        button:hover { 
+            background: linear-gradient(to right, var(--maroon-dark), var(--maroon-primary));
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(128,0,0,0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .switch { font-size: 14px; margin-top: 25px; color: #666; }
+        .switch a { color: var(--maroon-primary); text-decoration: none; font-weight: 600; }
+        .switch a:hover { text-decoration: underline; }
+
+        input[type="checkbox"] { accent-color: var(--maroon-primary); }
+    </style>
+</head>
+<body class="fade-in">
+
+<div class="container">
+    <div class="school-header">
+        <img src="rnhs logo.jpg" alt="RNHS Logo">
+        <p class="school-name">Rosales National High School</p>
+        <span class="web-text">SHS Official Web Portal</span>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+
+    <h2 id="title">Create Account</h2>
+
+    <form id="signupForm" onsubmit="handleSignUp(event)">
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Full Name" required>
+        </div>
+        
+        <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Student Email" required>
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-at"></i>
+            <input type="text" placeholder="Username" required>
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="passwordField" placeholder="Password" required>
+        </div>
+        
+        <div class="show-password-container" onclick="togglePasswordViaDiv()">
+            <input type="checkbox" id="togglePass" onclick="event.stopPropagation(); togglePassword()"> 
+            <label for="togglePass" style="cursor: pointer;">Show Password</label>
+        </div>
+
+        <div class="terms-box">
+            <input type="checkbox" id="terms" required>
+            <label for="terms">I agree to the <a href="#" style="color:var(--maroon-primary); font-weight:bold;">Terms and Conditions</a> of RNHS-SHS.</label>
+        </div>
+
+        <button type="submit" id="submitBtn">Sign Up</button>
+    </form>
+
+    <p class="switch">
+        Already have an account? <a href="login.html">Log In</a>
+    </p>
+</div>
+
+<script>
+    function togglePassword() {
+        const x = document.getElementById("passwordField");
+        x.type = (x.type === "password") ? "text" : "password";
+    }
+
+    function togglePasswordViaDiv() {
+        const checkbox = document.getElementById('togglePass');
+        checkbox.checked = !checkbox.checked;
+        togglePassword();
+    }
+
+    function handleSignUp(event) {
+        event.preventDefault(); 
+        
+        const btn = document.getElementById('submitBtn');
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+        btn.style.opacity = "0.8";
+        btn.style.pointerEvents = "none";
+
+        setTimeout(() => {
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = 'Home.html';
+            }, 800);
+        }, 1500);
+    }
+</script>
+
+</body>
+</html>
